@@ -11,7 +11,7 @@ function draw() {
   fill(20, 30, 100)
   rect(x, 100, 100, 100);
 
-  if (x + 100 > width) {
+  if (x + 100 >= width) {
     speed = -1 * speed;
   } else if (x <= 0) {
     speed = 3;
