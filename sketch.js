@@ -13,6 +13,8 @@ function draw() {
 
   if (x + 100 > width) {
     speed = -1 * speed;
+  } else if (x <= 0) {
+    speed = 3;
   }
 
   x = x + speed;
