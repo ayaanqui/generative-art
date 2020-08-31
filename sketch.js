@@ -7,8 +7,7 @@ function setup() {
 }
 
 function draw() {
-  ellipse(x, mouseY, 50, 50);
-  stroke(22);
+  ellipse(mouseX, mouseY, 50, 50);
 
   if (x >= windowWidth - 25 || x < 25) {
     speed = -speed;
