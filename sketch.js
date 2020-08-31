@@ -3,23 +3,24 @@ let speed = 3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(250, 100, 180);
+  background(200, 250, 250);
 }
 
 function draw() {
-  ellipse(x, mouseY, 100, 100);
+  ellipse(x, mouseY, 50, 50);
   stroke(22);
 
-  if (x > width - 50 || x < 50) {
+  if (x >= windowWidth - 25 || x < 25) {
     speed = -speed;
   }
   x = x + speed;
 
   if (mouseIsPressed) {
-    fill(255, 100, 180);
+    fill(255, random(50, 255), random(0, 170));
   } else {
-    fill(255, 255, 255);
+    fill(random(48, 200), random(99, 255), 210);
   }
+  noStroke();
 }
 
 function keyPressed() {
