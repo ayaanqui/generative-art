@@ -8,18 +8,18 @@ function setup() {
 
 function draw() {
   ellipse(mouseX, mouseY, 50, 50);
-
-  if (x >= windowWidth - 25 || x < 25) {
-    speed = -speed;
-  }
-  x = x + speed;
+  noStroke();
 
   if (mouseIsPressed) {
     fill(255, random(50, 255), random(0, 170));
   } else {
     fill(random(48, 200), random(99, 255), 210);
   }
-  noStroke();
+
+  if (x >= windowWidth - 25 || x < 25) {
+    speed = -speed;
+  }
+  x = x + speed;
 }
 
 function keyPressed() {
