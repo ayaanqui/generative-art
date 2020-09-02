@@ -25,16 +25,16 @@ class Ball {
     this.ySpeed = 3;
 
     this.colors = {
-      r: random(random(48, 200), 255),
-      g: random(random(99, 255), random(50, 255)),
-      b: random(210, random(0, 170))
+      r: random(48, 200),
+      g: random(99, 255),
+      b: 210,
     };
   }
 
   show() {
-    ellipse(this.x, this.y, this.c, this.c);
     noStroke();
     fill(this.colors.r, this.colors.g, this.colors.b);
+    ellipse(this.x, this.y, this.c, this.c);
 
     if (this.x >= (width - this.r) || this.x <= this.r)
       this.xSpeed = -1 * this.xSpeed + 1;
