@@ -1,5 +1,6 @@
 let x = 450;
-let speed = 3;
+let y = [180, 20, 400, 300];
+let speed = 5;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -7,21 +8,13 @@ function setup() {
 }
 
 function draw() {
-  ellipse(mouseX, mouseY, 50, 50);
-  noStroke();
-
-  if (mouseIsPressed) {
-    fill(255, random(50, 255), random(0, 170));
-  } else {
-    fill(random(48, 200), random(99, 255), 210);
+  for (var i = 0; i < y.length; i++) {
+    ellipse(x, y[i], 50, 50);
+    noStroke();
   }
 
+  x = x + speed;
   if (x >= windowWidth - 25 || x < 25) {
     speed = -speed;
   }
-  x = x + speed;
-}
-
-function keyPressed() {
-  saveCanvas('myCanvas', 'png');
 }
