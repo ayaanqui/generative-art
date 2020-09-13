@@ -12,6 +12,11 @@ function setup() {
 function draw() {
   for (var i = 0; i < balls.length; i++) {
     balls[i].show();
+    // balls[i].spawnNewColor();
+  }
+
+  if (mouseIsPressed) {
+    balls.push(new Ball());
   }
 }
 
@@ -24,10 +29,14 @@ class Ball {
     this.xSpeed = 3;
     this.ySpeed = 3;
 
+    this.spawnNewColor();
+  }
+
+  spawnNewColor() {
     this.colors = {
-      r: random(48, 200),
-      g: random(99, 255),
-      b: 210,
+      r: random(20, 200),
+      g: random(39, 255),
+      b: random(200, 240),
     };
   }
 
