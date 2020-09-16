@@ -25,9 +25,9 @@ function draw() {
 class Ball {
   constructor() {
     this.c = random(10, 40);
-    this.r = Math.sqrt(this.c);
-    this.x = random(0, width - this.r);
-    this.y = random(0, height - this.r);
+    this.r = this.c / 2;
+    this.x = random(random(3, 5), width - this.r);
+    this.y = random(random(0, 2), height - this.r);
     this.xSpeed = 3;
     this.ySpeed = 3;
 
@@ -47,11 +47,15 @@ class Ball {
     fill(this.colors.r, this.colors.g, this.colors.b);
     ellipse(this.x, this.y, this.c, this.c);
 
-    if (this.x >= (width - this.r) || this.x <= this.r)
-      this.xSpeed = -1 * this.xSpeed + 1;
+    const randMult = random(1);
 
-    if (this.y >= (height - this.r) || this.y <= this.r)
-      this.ySpeed = -1 * this.ySpeed + 1;
+    if (this.x >= (width - this.r) || this.x <= this.r) {
+      this.xSpeed = -1 * this.xSpeed;
+    }
+
+    if (this.y >= (height - this.r) || this.y <= this.r) {
+      this.ySpeed = -1 * this.ySpeed;
+    }
 
     this.x += this.xSpeed;
     this.y += this.ySpeed;
