@@ -4,7 +4,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(200, 250, 250);
 
-  for (var i = 0; i < random(30, 120); i++) {
+  const numBalls = random(30, 120);
+
+  for (var i = 0; i < numBalls; i++) {
     balls.push(new Ball());
   }
 }
